@@ -1,0 +1,32 @@
+### Requête de Test pour Vérifier que l'API est Fonctionnelle
+GET http://localhost:8000/
+
+### Requête de Connexion
+POST http://localhost:8000/login/
+Content-Type: application/json
+
+{
+    "username": "alice",
+    "password": "wonderland"
+}
+
+### Requête pour Obtenir des Questions
+GET http://localhost:8000/questions/?use=Test%20de%20positionnement%20&subject=BDD&number=5
+
+### Requête pour Ajouter une Nouvelle Question par l'Admin
+# Cette requête nécessite des identifiants d'administrateur valides
+POST http://localhost:8000/admin/questions/
+Content-Type: application/json
+
+{
+    "admin_username": "admin",
+    "admin_password": "4dm1N",
+    "question": "Quelle est la capitale de la France ?",
+    "subject": "Géographie",
+    "correct": ["Paris"],
+    "use": "Test de Géographie",
+    "responseA": "Paris",
+    "responseB": "Berlin",
+    "responseC": "Londres",
+    "responseD": "Madrid"
+}
